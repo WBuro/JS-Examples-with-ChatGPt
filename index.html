@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #333;
+            font-size: 24px;
+            color: #fff;
+        }
+        .color-picker{
+            width: 200px;
+            height: 200px;
+        
+        }
+    </style>
+</head>
+<body>
+    
+<!-- <ul id="todoList">
+    <li><input type="checkbox">Task 1</li>
+    <li><input type="checkbox">Task 2</li>
+    <li><input type="checkbox">Task 3</li>
+</ul>
+<button id="deleteCompleted">Delete Completed</button> -->
+
+<!-- <div id="formContainer">
+    <button id="addInput">Add Input</button>
+    <form action="" id="dynamicForm">
+        <input type="text" name="input1">
+    </form>
+</div> -->
+
+<!-- <input type="color" id="colorPicker">
+<div id="colorDisplay" class="color-picker"></div> -->
+
+<div id="draggable" draggable="true">Drag Me</div>
+<div id="droppable">Drop Here</div>
+
+
+<script>
+
+const draggable = document.getElementById("draggable");
+const droppable = document.getElementById("droppable");
+
+draggable.addEventListener("dragstart", (event) => {
+  event.dataTransfer.setData("text/plain", "Dragged Element");
+});
+
+droppable.addEventListener("dragover", (event) => {
+  event.preventDefault();
+});
+
+droppable.addEventListener("drop", (event) => {
+  event.preventDefault();
+  const data = event.dataTransfer.getData("text/plain");
+  droppable.textContent = data;
+});
+
+
+/* const colorPicker = document.getElementById('colorPicker');
+const colorDisplay = document.getElementById('colorDisplay');
+
+colorPicker.addEventListener('input', () => {
+    const selectedColor =colorPicker.value;
+    colorDisplay.style.backgroundColor = selectedColor;
+}); */
+
+/* const formContainer = document.getElementById("formContainer");
+const dynamicForm = document.getElementById("dynamicForm");
+const addInputBtn = document.getElementById("addInput");
+
+let inputCounter = 2;
+
+addInputBtn.addEventListener('click', () => {
+    const newInput = document.createElement("input");
+    newInput.type = 'text';
+    newInput.name = `input${inputCounter}`;
+    dynamicForm.appendChild(newInput);
+    inputCounter++;
+}) */
+
+
+/*  const todoList= document.getElementById('todoList');
+ deleteCompletedBtn = document.getElementById('deleteCompleted');
+
+ deleteCompletedBtn.addEventListener('click', () => {
+
+  const completedItems = Array.from(todoList.querySelectorAll('li input:checked'))
+  completedItems.forEach(item => item.parentElement.remove());
+ }); */
+
+
+
+</script>
+</body>
+</html>
